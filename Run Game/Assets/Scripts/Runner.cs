@@ -10,13 +10,10 @@ public class Runner : MonoBehaviour
     [SerializeField] float positionX = 2.25f;
     [SerializeField] float lerpSpeed = 25.0f;
 
-    private void OnEnable() {
-        InputManager.instance.keyAction += Move;
-    }
-
     void Start()
     {
         roadLine = RoadLine.MIDDLE;
+        InputManager.instance.keyAction += Move;
     }
 
     void Update()
@@ -50,6 +47,13 @@ public class Runner : MonoBehaviour
 
     public void Movement(float positionX) {
         transform.position = Vector3.Lerp(transform.position, new Vector3(positionX, 0, 0), Time.deltaTime * lerpSpeed);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        CollisionObject collisionObject = other.GetComponent<CollisionObject>();
+        if(collisionObject != null) {
+            collisionObject.Activate(this);
+        }
     }
 
     private void OnDisable() {
