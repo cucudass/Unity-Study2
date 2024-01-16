@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RoadManager : MonoBehaviour
 {
-    [SerializeField] List<GameObject> roadList;
     [SerializeField] float speed = 5.0f;
-    GameObject newRoad;
-    float newZ;
+    [SerializeField] float offset = 24.3f;
+
+    [SerializeField] List<GameObject> roadList;
     void Start()
     {
         roadList.Capacity = 10;
@@ -25,11 +25,11 @@ public class RoadManager : MonoBehaviour
     }
 
     public void NewPosition() {
-        newRoad = roadList[0];
-        roadList.RemoveAt(0);
-        newZ = roadList[2].transform.position.z;
+        GameObject newRoad = roadList[0];
+        roadList.Remove(newRoad);
+        float newZ = roadList[roadList.Count-1].transform.position.z + offset;
 
-        newRoad.transform.position = roadList[2].transform.position + Vector3.forward * newZ;
+        newRoad.transform.position = new Vector3(0, 0, newZ);
         roadList.Add(newRoad);
     }
 }
