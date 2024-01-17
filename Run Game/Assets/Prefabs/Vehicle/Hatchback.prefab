@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8295163097687489226}
   - component: {fileID: 8729169199707401913}
+  - component: {fileID: 6862441176367948079}
   m_Layer: 0
   m_Name: Hatchback
   m_TagString: Untagged
@@ -218,6 +219,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3.5}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6862441176367948079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726603433291071765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c3a810175ebc44b967ab08b6966f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1001 &2608204741500108082
 PrefabInstance:
   m_ObjectHideFlags: 0

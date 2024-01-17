@@ -359,6 +359,7 @@
 "Assets/Scripts/Manager/ResourcesManager.cs"
 "Assets/Scripts/Manager/RoadManager.cs"
 "Assets/Scripts/Manager/Singleton.cs"
+"Assets/Scripts/Manager/SpawnManager.cs"
 "Assets/Scripts/RoadBox.cs"
 "Assets/Scripts/Runner.cs"
 "Assets/Scripts/Vehicle.cs"
