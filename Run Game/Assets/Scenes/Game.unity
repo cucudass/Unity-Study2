@@ -1321,12 +1321,15 @@ MonoBehaviour:
   - {fileID: 941261538}
   - {fileID: 717287033}
   - {fileID: 1848739317}
-  Cars:
+  vehicleObject:
   - {fileID: 521031247987255540, guid: 720477a5b8708be4a8036a102da6f46c, type: 3}
   - {fileID: 8726603433291071765, guid: 5dd730aafc962d7418cc0249c6524afa, type: 3}
   - {fileID: 4080203859530133191, guid: ac0494bb96816ee448ed2c4538c11d50, type: 3}
   - {fileID: 6393378929595038062, guid: ae1c250c603def84ab5c1e40dd1c5159, type: 3}
   Vehicles: []
+  count: 0
+  random: 0
+  randomPosition: 0
 --- !u!4 &1949427496
 Transform:
   m_ObjectHideFlags: 0
