@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPositions; //위치 저장 배열
@@ -34,6 +35,13 @@ public class SpawnManager : MonoBehaviour
                 random = Random.Range(0, Vehicles.Count);
 
                 while (Vehicles[random].activeSelf) {
+                    if (FullVehicle()) { //현재 리스트에 있는 모든 게임 오브젝트가 활성화 했는지 확인
+                        //모든 오브젝트가 활성화 되었다면, 새로 오브젝트를 생성한다.
+                        GameObject vehicle = Instantiate(vehicleObject[Random.Range(0, vehicleObject.Length)]);
+                        vehicle.SetActive(false);
+
+                        Vehicles.Add(vehicle);
+                    }
                     random = (random + 1) % Vehicles.Count;
                 }
 
@@ -52,19 +60,16 @@ public class SpawnManager : MonoBehaviour
                 Vehicles[random].SetActive(true);
             }
 
-            if (VehicleActiveSelf()) Create();
-            yield return new WaitForSeconds(5f);
+            yield return CoroutineCache.waitForSeconds(5f);
         }
     }
 
-    public bool VehicleActiveSelf() {
-        int count = 0;
+    public bool FullVehicle() {
         for (int i = 0; i < Vehicles.Count; i++) {
-            if (Vehicles[i].activeSelf) {
-                count++;
+            if (!Vehicles[i].activeSelf) {
+                return false;
             }
         }
-        if (count == Vehicles.Count) return true;
-        else return false;
+        return true;
     }
 }

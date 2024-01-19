@@ -355,6 +355,8 @@
 -analyzer:"D:/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Unity/Hub/Editor/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CollisionObject.cs"
+"Assets/Scripts/CoroutineCache.cs"
+"Assets/Scripts/DisableZone.cs"
 "Assets/Scripts/Manager/InputManager.cs"
 "Assets/Scripts/Manager/ResourcesManager.cs"
 "Assets/Scripts/Manager/RoadManager.cs"
