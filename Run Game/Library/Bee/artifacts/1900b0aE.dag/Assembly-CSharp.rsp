@@ -361,6 +361,8 @@
 "Assets/Scripts/Collisioin Object/VehicleDetector.cs"
 "Assets/Scripts/Etc/CoroutineCache.cs"
 "Assets/Scripts/MainMenu.cs"
+"Assets/Scripts/Manager/AudioManager.cs"
+"Assets/Scripts/Manager/GameManager.cs"
 "Assets/Scripts/Manager/InputManager.cs"
 "Assets/Scripts/Manager/ResourcesManager.cs"
 "Assets/Scripts/Manager/RoadManager.cs"

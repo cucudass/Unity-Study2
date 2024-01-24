@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     IEnumerator ActiveVehicle() {
-        while (true) {
+        while (GameManager.instance.state) {
             for (int i = 0; i < Random.Range(1, spawnPositions.Length); i++) {
                 random = Random.Range(0, Vehicles.Count);
 

@@ -13,7 +13,7 @@ public class Vehicle : CollisionObject {
     }
 
     private void OnEnable() {
-        speed = Random.Range(5, 15);
+        speed = GameManager.instance.speed + Random.Range(5, 15);
         direction = Vector3.forward;
     }
 
@@ -23,10 +23,13 @@ public class Vehicle : CollisionObject {
     }
 
     void Move() {
+        if (!GameManager.instance.state) return;
+
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
     public override void Activate(Runner runner) {
-        Debug.Log("Game Over");
+        runner.animator.Play("Die");
+        GameManager.instance.GameOver();
     }
 }
