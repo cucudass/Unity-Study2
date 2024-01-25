@@ -11,6 +11,8 @@ public class Runner : MonoBehaviour
     [SerializeField] RoadLine roadLine;
     [SerializeField] float positionX = 2.25f;
     [SerializeField] float lerpSpeed = 25.0f;
+    [SerializeField] LeftCollider leftCollider;
+    [SerializeField] RightCollider rightCollider;
 
     void Start()
     {
@@ -27,11 +29,13 @@ public class Runner : MonoBehaviour
         if (!GameManager.instance.state) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            if(roadLine > RoadLine.LEFT) roadLine--;
+            if (leftCollider.Detector) return;
+            if (roadLine > RoadLine.LEFT) roadLine--;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            if(roadLine < RoadLine.RIGHT) roadLine++;
+            if (leftCollider.Detector) return;
+            if (roadLine < RoadLine.RIGHT) roadLine++;
         }
     }
 

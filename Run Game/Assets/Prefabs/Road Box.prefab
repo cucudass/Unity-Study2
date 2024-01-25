@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4724671371786255863}
   - component: {fileID: 6466362419684905621}
   - component: {fileID: 911539182977097000}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Road Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,3 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23756b6ebcc60894aa7016ae9fa15b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initSpeed: 0
+  callback:
+    m_PersistentCalls:
+      m_Calls: []
