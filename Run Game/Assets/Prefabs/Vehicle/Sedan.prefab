@@ -218,8 +218,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 4}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2, y: 2, z: 3.5}
+  m_Center: {x: 0, y: 1, z: 0.25}
 --- !u!114 &-8979958674385277956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  minRandomSpeed: 5
+  maxRandomSpeed: 20
 --- !u!1001 &3326891907868050546
 PrefabInstance:
   m_ObjectHideFlags: 0

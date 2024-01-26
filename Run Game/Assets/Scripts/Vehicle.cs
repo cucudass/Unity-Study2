@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Vehicle : CollisionObject {
     [SerializeField] float speed;
     Vector3 direction;
+    [SerializeField] float minRandomSpeed = 5;
+    [SerializeField] float maxRandomSpeed = 20;
 
     public float Speed {
         get { return speed; }
@@ -13,7 +15,11 @@ public class Vehicle : CollisionObject {
     }
 
     private void OnEnable() {
-        speed = GameManager.instance.speed + Random.Range(5, 15);
+        if(minRandomSpeed < 19) {
+            minRandomSpeed += 1;
+        }
+
+        speed = GameManager.instance.speed + Random.Range(minRandomSpeed, maxRandomSpeed);
         direction = Vector3.forward;
     }
 
