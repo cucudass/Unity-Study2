@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Vehicle : CollisionObject {
+public class Vehicle : MonoBehaviour {
     [SerializeField] float speed;
     Vector3 direction;
     [SerializeField] float minRandomSpeed = 5;
@@ -32,10 +32,5 @@ public class Vehicle : CollisionObject {
         if (!GameManager.instance.state) return;
 
         transform.Translate(direction * speed * Time.deltaTime);
-    }
-
-    public override void Activate(Runner runner) {
-        runner.animator.Play("Die");
-        GameManager.instance.GameOver();
     }
 }

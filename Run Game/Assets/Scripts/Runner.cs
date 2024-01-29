@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum RoadLine { LEFT = -1, MIDDLE, RIGHT }
-
 public class Runner : MonoBehaviour
 {
     public Animator animator;
 
     [SerializeField] RoadLine roadLine;
+    [SerializeField] RoadLine preRoadLine;
     [SerializeField] float positionX = 2.25f;
     [SerializeField] float lerpSpeed = 25.0f;
-    [SerializeField] LeftCollider leftCollider;
-    [SerializeField] RightCollider rightCollider;
 
     void Start()
     {
         roadLine = RoadLine.MIDDLE;
+        preRoadLine = RoadLine.MIDDLE;
         InputManager.instance.keyAction += Move;
     }
 
@@ -29,13 +28,15 @@ public class Runner : MonoBehaviour
         if (!GameManager.instance.state) return;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            if (leftCollider.Detector) return;
-            if (roadLine > RoadLine.LEFT) roadLine--;
+            if (roadLine > RoadLine.LEFT) {
+                preRoadLine = roadLine--;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            if (leftCollider.Detector) return;
-            if (roadLine < RoadLine.RIGHT) roadLine++;
+            if (roadLine < RoadLine.RIGHT) {
+                preRoadLine = roadLine++;
+            }
         }
     }
 
@@ -55,6 +56,10 @@ public class Runner : MonoBehaviour
 
     public void Movement(float positionX) {
         transform.position = Vector3.Lerp(transform.position, new Vector3(positionX, 0, 0), Time.deltaTime * lerpSpeed);
+    }
+
+    public void RevertPosition() { //이전의 위치로 이동
+        roadLine = preRoadLine;
     }
 
     private void OnTriggerEnter(Collider other) {
