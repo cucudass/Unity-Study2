@@ -29,12 +29,14 @@ public class Runner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             if (roadLine > RoadLine.LEFT) {
+                animator.Play("Left Avoid");
                 preRoadLine = roadLine--;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
             if (roadLine < RoadLine.RIGHT) {
+                animator.Play("Right Avoid");
                 preRoadLine = roadLine++;
             }
         }

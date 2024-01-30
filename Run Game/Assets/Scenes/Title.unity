@@ -359,6 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d410746332f1ece4ea24774805e9716e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    score: 0
 --- !u!1 &298572256
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62b49db99758264e9a6dcad3eca26a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5553865264025366210}
 --- !u!1 &444864519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,7 +3712,7 @@ Animator:
   m_GameObject: {fileID: 7184241180242720815}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55dc3beb53078b94bbb6125c304472b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee9d2d83690d90c46a74a953115587bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
