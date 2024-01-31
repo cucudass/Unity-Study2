@@ -373,6 +373,9 @@
 "Assets/Scripts/Manager/Singleton.cs"
 "Assets/Scripts/Manager/SpawnManager.cs"
 "Assets/Scripts/Runner.cs"
+"Assets/Scripts/UI/PauseButton.cs"
+"Assets/Scripts/UI/PausePanel.cs"
+"Assets/Scripts/UI/ScoreUI.cs"
 "Assets/Scripts/Vehicle.cs"
 -langversion:9.0
 

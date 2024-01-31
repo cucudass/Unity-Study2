@@ -17,7 +17,7 @@ public class AsyncSceneLoader : Singleton<AsyncSceneLoader>
         fadeImage.gameObject.SetActive(true);
 
         while(color.a > 0f) {
-            color.a -= Time.deltaTime;
+            color.a -= Time.unscaledDeltaTime;
             fadeImage.color = color;
 
             yield return null;
@@ -38,12 +38,12 @@ public class AsyncSceneLoader : Singleton<AsyncSceneLoader>
         color.a = 0f;
 
         while (!asyncOperation.isDone) {
-            color.a += Time.deltaTime;
+            color.a += Time.unscaledDeltaTime;
             fadeImage.color = color;
 
             if(asyncOperation.progress >= 0.9f) {
                 // color의 alpha 값을 1.0로 Lerp 함수를 통해 올려준다.
-                color.a = Mathf.Lerp(color.a, 1f, Time.deltaTime);
+                color.a = Mathf.Lerp(color.a, 1f, Time.unscaledDeltaTime);
                 // alpha 값이 1.0보다 크거나 같다면
                 if(color.a >= 1.0f) {
                     //allowSceneActivation을 활성화
