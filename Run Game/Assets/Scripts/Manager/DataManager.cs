@@ -5,7 +5,7 @@ using System.IO;
 
 [System.Serializable]
 public class Data {
-    public int score;
+    public int bestscore;
 }
 
 public class DataManager : Singleton<DataManager>
@@ -30,5 +30,12 @@ public class DataManager : Singleton<DataManager>
         string code = System.Text.Encoding.UTF8.GetString(bytes); //바이트 배열을 UTF-8 문자열로 디코딩
 
         data = JsonUtility.FromJson<Data>(code); //JSON 문자열을 역직렬화하여 Data 객체로 변환
+    }
+
+    public void RenewalScore(int currentScore) {
+        if (data.bestscore < currentScore) {
+            data.bestscore = currentScore;
+            Save();
+        }
     }
 }

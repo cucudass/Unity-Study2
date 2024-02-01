@@ -6,8 +6,6 @@ using UnityEngine.Events;
 public class Vehicle : MonoBehaviour {
     [SerializeField] float speed;
     Vector3 direction;
-    [SerializeField] float minRandomSpeed = 5;
-    [SerializeField] float maxRandomSpeed = 20;
 
     public float Speed {
         get { return speed; }
@@ -15,12 +13,10 @@ public class Vehicle : MonoBehaviour {
     }
 
     private void OnEnable() {
-        if(minRandomSpeed < 19) {
-            minRandomSpeed += 1;
-        }
-
-        speed = GameManager.instance.speed + Random.Range(minRandomSpeed, maxRandomSpeed);
         direction = Vector3.forward;
+
+        GameManager.instance.ControlRandomSpeed();
+        speed = GameManager.instance.speed + Random.Range(GameManager.instance.minRandomSpeed, GameManager.instance.maxRandomSpeed);
     }
 
     void Update()
